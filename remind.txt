@@ -1,0 +1,60 @@
+创建vue项目
+    1.命令行工具创建
+        1.vue create 项目名称
+        2.是否使用淘宝镜像（一次性选择，后面全是默认，不会在出现这个选项）
+        3.选择创建方式
+            1.default默认
+            2.选择manually自定义，有些配置项是需要自己完成的
+            3.1项目中所需要的依赖项（空格选择）
+        4.最后需要一个什么样的配置文件  package。json
+        5.是否存储为一个预设
+
+        预设保存在：c:\Users\Administrator中.vuerc的文件
+
+        package.json:
+            dependencies生成依赖
+            devDependencies开发依赖
+            script 中的选项就是npm具体的运行
+            npm run script中的选项
+    2.ui界面创建
+        vue ui
+
+路由：大型项目必备
+     路由的安装
+        1.在项目根目录中 vue add router
+        2.是否启用历史模式，选择否
+            1。历史模式
+            2.哈希模式
+        3.如果src的文件中多了一个router和views文件夹，则说明路由安装成功
+        （router中的index.js文件主要配置路由
+            views文件夹存放的是页面级组件
+            components文件夹存放的是页面内存在
+            图片和样式一般放在assets文件夹中
+        ）
+        
+     路由的嵌套
+     路由一系列的钩子函数
+     
+
+
+     router-link-exact-active 完全匹配
+     router-link-active  包含匹配         默认为/
+
+
+
+
+导航守卫（7个）
+    全局        main.js
+        beforeEach
+        beforeResolve
+        afterEach
+    路由独享  router文件夹中的index.js
+        beforeEnter
+    组件内    任意组件写
+        beforeRouteEnter
+        beforeRouteLeave
+        beforeRouteUpdate
+
+完整的导航解析流程
+beforeEach（全局守卫）  -->  beforeEnter(路由独享守卫) -->  beforeRouteEnter(组件内守卫) -->  beforeResolve(全局守卫--解析) afterEach（全局守卫-解析完成）
+beforeRouteUpdate   
